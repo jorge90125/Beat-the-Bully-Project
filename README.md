@@ -1,4 +1,4 @@
-# Beat-the-Bully-Project
+# beat-the-bully-project
 Project 1 for GA SEI Flex 2022
 
 Beat the Bully game for 1st GA Project
