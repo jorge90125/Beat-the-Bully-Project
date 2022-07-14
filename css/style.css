@@ -2,8 +2,12 @@ body {
     background-color: cornflowerblue;
 }
 
-.skills {
+.intro {
     display: none;
+}
+
+.skills {
+    display: block;
 }
 
 .battle {
