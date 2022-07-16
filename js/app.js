@@ -31,16 +31,20 @@ const dexUp = document.querySelector(`#dexUp`)
 
 const skillsLeft = document.querySelector(`#skillLeft`)
 const skillsBackBtn = document.querySelector(`#skillsBackBtn`)
+const startBattle = document.querySelector(`#startBattle`)
 
 const stats = document.querySelectorAll(`.stats`)
 
 //INTRO
-//create character
+//create character and bully
 const character = new Character()
 strStat.innerHTML = character.str
 intStat.innerHTML = character.int
 dexStat.innerHTML = character.dex
 skillsLeft.innerHTML = character.skllft
+
+const bully = new Character()
+bully.name = `Bully`
 
 //Submit name and go to skills
 const intro = ()  =>  {
@@ -138,6 +142,16 @@ const backToIntro = () => {
     })
 }
 
+//BATTLE
+//Start battle button on skills screen thats sets character and bully for battle
+const toBattle = () => {
+    const playerStats = []
+    playerStats.push(character.str)
+    playerStats.push(character.int)
+    playerStats.push(character.dex)
+    console.log(playerStats)
+}
+
 //buttons
 submitName.addEventListener(`click`, intro)
 strDwn.addEventListener(`click`, strengthMinus)
@@ -147,3 +161,4 @@ intUp.addEventListener(`click`, intPlus)
 dexDwn.addEventListener(`click`, dexMinus)
 dexUp.addEventListener(`click`, dexPlus)
 skillsBackBtn.addEventListener(`click`, backToIntro)
+startBattle.addEventListener(`click`, toBattle)
