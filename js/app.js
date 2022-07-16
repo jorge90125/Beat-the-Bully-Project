@@ -30,9 +30,11 @@ const dexDwn = document.querySelector(`#dexDwn`)
 const dexUp = document.querySelector(`#dexUp`)
 
 const skillsLeft = document.querySelector(`#skillLeft`)
+const skillsBackBtn = document.querySelector(`#skillsBackBtn`)
 
 const stats = document.querySelectorAll(`.stats`)
 
+//INTRO
 //create character
 const character = new Character()
 strStat.innerHTML = character.str
@@ -56,6 +58,7 @@ const intro = ()  =>  {
     })
 }
 
+//SKILLS
 //change strength stat
 const strengthMinus = () => {
     if (character.str === 0) {
@@ -125,6 +128,16 @@ const dexPlus = () => {
     }
 }
 
+//back button
+const backToIntro = () => {
+    skillsClass.forEach((element) => {
+        element.style.display = `none`
+    })
+    introClass.forEach((element) => {
+        element.style.display = `block`
+    })
+}
+
 //buttons
 submitName.addEventListener(`click`, intro)
 strDwn.addEventListener(`click`, strengthMinus)
@@ -133,3 +146,4 @@ intDwn.addEventListener(`click`, intMinus)
 intUp.addEventListener(`click`, intPlus)
 dexDwn.addEventListener(`click`, dexMinus)
 dexUp.addEventListener(`click`, dexPlus)
+skillsBackBtn.addEventListener(`click`, backToIntro)
