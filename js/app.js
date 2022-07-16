@@ -36,15 +36,26 @@ const startBattle = document.querySelector(`#startBattle`)
 const stats = document.querySelectorAll(`.stats`)
 
 //INTRO
-//create character and bully
+//create character
 const character = new Character()
 strStat.innerHTML = character.str
 intStat.innerHTML = character.int
 dexStat.innerHTML = character.dex
 skillsLeft.innerHTML = character.skllft
 
-const bully = new Character()
-bully.name = `Bully`
+//set bully skills points
+const bullyStats = []
+const getBullyStat = () => {
+    const randomBetween = (min, max) => {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+    const max = 10
+    let num1 = randomBetween(0, max-2)
+    let num2 = randomBetween(0, max-1-num1)
+    let num3 = max - num1 - num2
+    bullyStats.push(num1, num2, num3)
+}
+getBullyStat()
 
 //Submit name and go to skills
 const intro = ()  =>  {
@@ -149,7 +160,7 @@ const toBattle = () => {
     playerStats.push(character.str)
     playerStats.push(character.int)
     playerStats.push(character.dex)
-    console.log(playerStats)
+    
 }
 
 //buttons
