@@ -64,7 +64,6 @@ const intro = ()  =>  {
     } else {
     character.name = nameSelect.value
     }
-    console.log(character)
     introClass.forEach((element) => {
         element.style.display = `none`
     })
@@ -154,13 +153,22 @@ const backToIntro = () => {
 }
 
 //BATTLE
-//Start battle button on skills screen thats sets character and bully for battle
+//Start battle button on skills screen thats sets character and bully ready for battle
 const toBattle = () => {
-    const playerStats = []
-    playerStats.push(character.str)
-    playerStats.push(character.int)
-    playerStats.push(character.dex)
-    
+    if (character.skllft !== 0) {
+        return
+    } else {
+        const playerStats = []
+        playerStats.push(character.str)
+        playerStats.push(character.int)
+        playerStats.push(character.dex)
+        skillsClass.forEach((element) => {
+            element.style.display = `none`
+        })
+        battleClass.forEach((element) => {
+            element.style.display = `block`
+        })
+    }
 }
 
 //buttons
