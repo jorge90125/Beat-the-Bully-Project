@@ -1,10 +1,11 @@
 //Character Class
 class Character {
-    constructor(name) {
-    this.name = name
+    constructor() {
+    this.name = ``
     this.str = 0
     this.int = 0
     this.dex = 0
+    this.skllft = 10
     }
 }
 
@@ -28,13 +29,16 @@ const dexStat = document.querySelector(`#dexStat`)
 const dexDwn = document.querySelector(`#dexDwn`)
 const dexUp = document.querySelector(`#dexUp`)
 
-const stats = document.querySelector(`.stats`)
+const skillsLeft = document.querySelector(`#skillLeft`)
+
+const stats = document.querySelectorAll(`.stats`)
 
 //create character
-const character = new Character(``)
+const character = new Character()
 strStat.innerHTML = character.str
 intStat.innerHTML = character.int
 dexStat.innerHTML = character.dex
+skillsLeft.innerHTML = character.skllft
 
 //Submit name and go to skills
 const intro = ()  =>  {
@@ -59,15 +63,19 @@ const strengthMinus = () => {
     } else {
         character.str --
         strStat.innerHTML = character.str
+        character.skllft ++
+        skillsLeft.innerHTML = character.skllft
     }
 }
 
 const strengthPlus = () => {
-    if (character.str === 10) {
+    if (character.str === 10 || character.skllft === 0) {
         return
     } else {
         character.str ++
         strStat.innerHTML = character.str
+        character.skllft --
+        skillsLeft.innerHTML = character.skllft
     }
 }
 
@@ -78,15 +86,19 @@ const intMinus = () => {
     } else {
         character.int --
         intStat.innerHTML = character.int
+        character.skllft ++
+        skillsLeft.innerHTML = character.skllft
     }
 }
 
 const intPlus = () => {
-    if (character.int === 10) {
+    if (character.int === 10 || character.skllft === 0) {
         return
     } else {
         character.int ++
         intStat.innerHTML = character.int
+        character.skllft --
+        skillsLeft.innerHTML = character.skllft
     }
 }
 
@@ -97,15 +109,19 @@ const dexMinus = () => {
     } else {
         character.dex --
         dexStat.innerHTML = character.dex
+        character.skllft ++
+        skillsLeft.innerHTML = character.skllft
     }
 }
 
 const dexPlus = () => {
-    if (character.dex === 10) {
+    if (character.dex === 10 || character.skllft === 0) {
         return
     } else {
         character.dex ++
         dexStat.innerHTML = character.dex
+        character.skllft --
+        skillsLeft.innerHTML = character.skllft
     }
 }
 
