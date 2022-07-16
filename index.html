@@ -24,8 +24,7 @@
         <div class="intro">
             <h2>Premise</h2>
             <p>The school bully won't stop picking on you and your friends! After speaking out against him, he's challenging you to a fight after school. You only have a limited amount of time to train up! First thing's first, what is your name?</p>
-            <input type="text" value="Your name here"><button type="button">Submit</button>
-
+            <input type="text" id="nameInput" placeholder="Your name here"><button type="button" id="nameSubmit">Submit</button>
         </div>
         <div class="skills">
             <div>
@@ -34,7 +33,7 @@
                     <li>Add points to your 3 skills</li>
                     <li>The sum total of all 3 skills must equal 10 to continue</li>
                     <li>Click the "Start Batlle" button when you are done and the battle will commence</li>
-                    <li>Once the battle begins, each turn will consist of one of the 3 skills to be randomly chosen</li>
+                    <li>Once the battle begins, each turn will consist of one of the 3 skills being randomly chosen</li>
                     <li>The random skill value will be compared to a random skill value of the bully</li>
                     <li>The player with the higher stat will deal one damage</li>
                     <li>Once a player's health reaches 0, they lose</li>
@@ -42,36 +41,47 @@
                 <br>
                 <hr>
                 <br>
+                <div id="characterImg">
+
+                </div>
                 <div>
                     <article>
                         <h1>Strength</h1>
                         <br>
-                        <button type="button">-</button>
-                        <p>-</p>
-                        <button type="button">+</button>
+                        <button type="button" id="strDwn">-</button>
+                        <p class="stats" id="strStat">0</p>
+                        <button type="button" id="strUp">+</button>
                     </article>
                     <article>
                         <h1>Intelligence</h1>
                         <br>
-                        <button type="button">-</button>
-                        <p>-</p>
-                        <button type="button">+</button>
+                        <button type="button" id="intDwn">-</button>
+                        <p class="stats" id="intStat">0</p>
+                        <button type="button" id="intUp">+</button>
                     </article>
                     <article>
                         <h1>Dexterity</h1>
                         <br>
-                        <button type="button">-</button>
-                        <p>-</p>
-                        <button type="button">+</button>
+                        <button type="button" id="dexDwn">-</button>
+                        <p class="stats" id="dexStat">0</p>
+                        <button type="button" id="dexUp">+</button>
                     </article>
                 </div>
                 <h3>Available Skill Points</h3>
-                <p>10</p>
-                <button type="button">Start Battle!</button>
+                <p id="skillLeft">10</p>
+                <button type="button" id="startBattle">Start Battle!</button>
             </div>
         </div>
         <div class="battle">
+            <div class="healthBars">
 
+            </div>
+            <div class="characters">
+
+            </div>
+            <div id="battleLog">
+                <p>Battle Log</p>
+            </div>
         </div>
     </main>
 
