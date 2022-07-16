@@ -186,7 +186,11 @@ const fight = () => {
     const playerChoice = playerStats[playerPlay]
     const bullyPlay = Math.floor(Math.random() * bullyStats.length)
     const bullyChoice = bullyStats[bullyPlay]
-    if (playerChoice > bullyChoice) {
+    if (playerChoice === bullyChoice) {
+        const newMsg = document.createElement(`p`)
+        newMsg.innerText = `Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. It's a tie!`
+        battleLog.appendChild(newMsg)
+    } else if (playerChoice > bullyChoice) {
         bullyHP --
         bullyHealth.innerHTML = bullyHP
         const newMsg = document.createElement(`p`)
@@ -201,6 +205,16 @@ const fight = () => {
     }
 }
 
+//Autofight Interval
+const fightInterval = () => {
+    fight()
+}
+
+const setFightInterval = () => {
+    beginBattle.style.display = `none`
+    setInterval(fightInterval, 1500)
+}
+
 //buttons
 submitName.addEventListener(`click`, intro)
 strDwn.addEventListener(`click`, strengthMinus)
@@ -211,4 +225,4 @@ dexDwn.addEventListener(`click`, dexMinus)
 dexUp.addEventListener(`click`, dexPlus)
 skillsBackBtn.addEventListener(`click`, backToIntro)
 startBattle.addEventListener(`click`, toBattle)
-beginBattle.addEventListener(`click`, fight)
+beginBattle.addEventListener(`click`, setFightInterval)
