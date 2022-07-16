@@ -33,15 +33,25 @@ const skillsLeft = document.querySelector(`#skillLeft`)
 const skillsBackBtn = document.querySelector(`#skillsBackBtn`)
 const startBattle = document.querySelector(`#startBattle`)
 
+const playerStats = []
+const beginBattle = document.querySelector(`#beginBattle`)
+const playerHealth = document.querySelector(`#playerHealth`)
+const bullyHealth = document.querySelector(`#bullyHealth`)
+const battleLog = document.querySelector(`#battleLog`)
+
 const stats = document.querySelectorAll(`.stats`)
 
 //INTRO
-//create character
+//create character and set health
 const character = new Character()
 strStat.innerHTML = character.str
 intStat.innerHTML = character.int
 dexStat.innerHTML = character.dex
 skillsLeft.innerHTML = character.skllft
+let playerHP = 10
+playerHealth.innerHTML = playerHP
+let bullyHP = 10
+bullyHealth.innerHTML = bullyHP
 
 //set bully skills points
 const bullyStats = []
@@ -158,7 +168,6 @@ const toBattle = () => {
     if (character.skllft !== 0) {
         return
     } else {
-        const playerStats = []
         playerStats.push(character.str)
         playerStats.push(character.int)
         playerStats.push(character.dex)
@@ -168,6 +177,27 @@ const toBattle = () => {
         battleClass.forEach((element) => {
             element.style.display = `block`
         })
+    }
+}
+
+//Each turn function
+const fight = () => {
+    const playerPlay = Math.floor(Math.random() * playerStats.length)
+    const playerChoice = playerStats[playerPlay]
+    const bullyPlay = Math.floor(Math.random() * bullyStats.length)
+    const bullyChoice = bullyStats[bullyPlay]
+    if (playerChoice > bullyChoice) {
+        bullyHP --
+        bullyHealth.innerHTML = bullyHP
+        const newMsg = document.createElement(`p`)
+        newMsg.innerText = `Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Player deals damage!`
+        battleLog.appendChild(newMsg)
+    } else {
+        playerHP --
+        playerHealth.innerHTML = playerHP
+        const newMsg = document.createElement(`p`)
+        newMsg.innerText = `Oh no! Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Bully deals damage!`
+        battleLog.appendChild(newMsg)
     }
 }
 
@@ -181,3 +211,4 @@ dexDwn.addEventListener(`click`, dexMinus)
 dexUp.addEventListener(`click`, dexPlus)
 skillsBackBtn.addEventListener(`click`, backToIntro)
 startBattle.addEventListener(`click`, toBattle)
+beginBattle.addEventListener(`click`, fight)
