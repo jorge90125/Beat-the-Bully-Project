@@ -90,9 +90,30 @@ const intPlus = () => {
     }
 }
 
+//change dexterity stat
+const dexMinus = () => {
+    if (character.dex === 0) {
+        return
+    } else {
+        character.dex --
+        dexStat.innerHTML = character.dex
+    }
+}
+
+const dexPlus = () => {
+    if (character.dex === 10) {
+        return
+    } else {
+        character.dex ++
+        dexStat.innerHTML = character.dex
+    }
+}
+
 //buttons
 submitName.addEventListener(`click`, intro)
 strDwn.addEventListener(`click`, strengthMinus)
 strUp.addEventListener(`click`, strengthPlus)
 intDwn.addEventListener(`click`, intMinus)
 intUp.addEventListener(`click`, intPlus)
+dexDwn.addEventListener(`click`, dexMinus)
+dexUp.addEventListener(`click`, dexPlus)
