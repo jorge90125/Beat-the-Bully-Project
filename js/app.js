@@ -37,6 +37,9 @@ const playerStats = []
 const beginBattle = document.querySelector(`#beginBattle`)
 const playerHealth = document.querySelector(`#playerHealth`)
 const bullyHealth = document.querySelector(`#bullyHealth`)
+const charBattleName = document.querySelector(`#charBattleName`)
+const char3Stats = document.querySelector(`#char3Stats`)
+const bully3Stats = document.querySelector(`#bully3Stats`)
 const battleLog = document.querySelector(`#battleLog`)
 
 const stats = document.querySelectorAll(`.stats`)
@@ -177,6 +180,9 @@ const toBattle = () => {
         battleClass.forEach((element) => {
             element.style.display = `block`
         })
+        charBattleName.innerHTML = character.name
+        char3Stats.innerHTML = `Str: ${character.str} Int: ${character.int} Dex: ${character.dex}`
+        bully3Stats.innerHTML = `Str: ${bullyStats[0]} Int: ${bullyStats[1]} Dex: ${bullyStats[2]}`
     }
 }
 
@@ -206,13 +212,9 @@ const fight = () => {
 }
 
 //Autofight Interval
-const fightInterval = () => {
-    fight()
-}
-
 const setFightInterval = () => {
     beginBattle.style.display = `none`
-    setInterval(fightInterval, 1500)
+    setInterval(fight, 1500)
 }
 
 //buttons
