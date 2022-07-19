@@ -187,12 +187,14 @@ const toBattle = () => {
     }
 }
 
-//Each turn function
+//Each turn function and end of game
 const fight = () => {
     if (playerHP === 0) {
         alert(`Terrible news. The bully has maintained dominance and defeated you. This page will now refresh. Feel free to play again!`)
+        location.reload()
     } else if (bullyHP === 0) {
         alert(`Huzzah! You have vanquished your foe. The marginalized yougins of the schoolyard rejoice! You win! This page will now refresh. You should try playing again! <3`)
+        location.reload()
     } else {
         const playerPlay = Math.floor(Math.random() * playerStats.length)
         const playerChoice = playerStats[playerPlay]
