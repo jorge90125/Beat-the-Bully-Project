@@ -41,6 +41,7 @@ const charBattleName = document.querySelector(`#charBattleName`)
 const char3Stats = document.querySelector(`#char3Stats`)
 const bully3Stats = document.querySelector(`#bully3Stats`)
 const battleLog = document.querySelector(`#battleLog`)
+const battleBackBtn = document.querySelector(`#battleBackBtn`)
 
 const stats = document.querySelectorAll(`.stats`)
 
@@ -188,26 +189,32 @@ const toBattle = () => {
 
 //Each turn function
 const fight = () => {
-    const playerPlay = Math.floor(Math.random() * playerStats.length)
-    const playerChoice = playerStats[playerPlay]
-    const bullyPlay = Math.floor(Math.random() * bullyStats.length)
-    const bullyChoice = bullyStats[bullyPlay]
-    if (playerChoice === bullyChoice) {
-        const newMsg = document.createElement(`p`)
-        newMsg.innerText = `Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. It's a tie!`
-        battleLog.appendChild(newMsg)
-    } else if (playerChoice > bullyChoice) {
-        bullyHP --
-        bullyHealth.innerHTML = bullyHP
-        const newMsg = document.createElement(`p`)
-        newMsg.innerText = `Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Player deals damage!`
-        battleLog.appendChild(newMsg)
+    if (playerHP === 0) {
+        alert(`Terrible news. The bully has maintained dominance and defeated you. This page will now refresh. Feel free to play again!`)
+    } else if (bullyHP === 0) {
+        alert(`Huzzah! You have vanquished your foe. The marginalized yougins of the schoolyard rejoice! You win! This page will now refresh. You should try playing again! <3`)
     } else {
-        playerHP --
-        playerHealth.innerHTML = playerHP
-        const newMsg = document.createElement(`p`)
-        newMsg.innerText = `Oh no! Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Bully deals damage!`
-        battleLog.appendChild(newMsg)
+        const playerPlay = Math.floor(Math.random() * playerStats.length)
+        const playerChoice = playerStats[playerPlay]
+        const bullyPlay = Math.floor(Math.random() * bullyStats.length)
+        const bullyChoice = bullyStats[bullyPlay]
+        if (playerChoice === bullyChoice) {
+            const newMsg = document.createElement(`p`)
+            newMsg.innerText = `Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. It's a tie!`
+            battleLog.appendChild(newMsg)
+        } else if (playerChoice > bullyChoice) {
+            bullyHP --
+            bullyHealth.innerHTML = bullyHP
+            const newMsg = document.createElement(`p`)
+            newMsg.innerText = `Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Player deals damage!`
+            battleLog.appendChild(newMsg)
+        } else {
+            playerHP --
+            playerHealth.innerHTML = playerHP
+            const newMsg = document.createElement(`p`)
+            newMsg.innerText = `Oh no! Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Bully deals damage!`
+            battleLog.appendChild(newMsg)
+        }
     }
 }
 
@@ -215,6 +222,20 @@ const fight = () => {
 const setFightInterval = () => {
     beginBattle.style.display = `none`
     setInterval(fight, 1500)
+}
+
+//battle back button
+const stopFightInterval = () => {
+    clearInterval(setFightInterval)
+}
+const backToSkills = () => {
+    stopFightInterval
+    battleClass.forEach((element) => {
+        element.style.display = `none`
+    })
+    skillsClass.forEach((element) => {
+        element.style.display = `block`
+    })
 }
 
 //buttons
@@ -228,3 +249,4 @@ dexUp.addEventListener(`click`, dexPlus)
 skillsBackBtn.addEventListener(`click`, backToIntro)
 startBattle.addEventListener(`click`, toBattle)
 beginBattle.addEventListener(`click`, setFightInterval)
+battleBackBtn.addEventListener(`click`, backToSkills)

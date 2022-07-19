@@ -27,51 +27,49 @@
             <input type="text" id="nameInput" placeholder="Your name here"><button type="button" id="nameSubmit">Submit</button>
         </div>
         <div class="skills">
-            <div>
-                <h2>Directions</h2>
-                <ul>
-                    <li>Add points to your 3 skills</li>
-                    <li>The sum total of all 3 skills must equal 10 to continue</li>
-                    <li>Click the "Start Batlle" button when you are done and the battle will commence</li>
-                    <li>Once the battle begins, each turn will consist of one of the 3 skills being randomly chosen</li>
-                    <li>The random skill value will be compared to a random skill value of the bully</li>
-                    <li>The player with the higher stat will deal one damage</li>
-                    <li>Once a player's health reaches 0, they lose</li>
-                </ul>
-                <br>
-                <hr>
-                <br>
-                <div id="characterImg">
+            <h2>Directions</h2>
+            <ul>
+                <li>Add points to your 3 skills</li>
+                <li>The sum total of all 3 skills must equal 10 to continue</li>
+                <li>Click the "Start Batlle" button when you are done and the battle will commence</li>
+                <li>Once the battle begins, each turn will consist of one of the 3 skills being randomly chosen</li>
+                <li>The random skill value will be compared to a random skill value of the bully</li>
+                <li>The player with the higher stat will deal one damage</li>
+                <li>Once a player's health reaches 0, they lose</li>
+            </ul>
+            <br>
+            <hr>
+            <br>
+            <div id="characterImg">
 
-                </div>
-                <div>
-                    <article>
-                        <h1>Strength</h1>
-                        <br>
-                        <button type="button" id="strDwn">-</button>
-                        <p class="stats" id="strStat"></p>
-                        <button type="button" id="strUp">+</button>
-                    </article>
-                    <article>
-                        <h1>Intelligence</h1>
-                        <br>
-                        <button type="button" id="intDwn">-</button>
-                        <p class="stats" id="intStat"></p>
-                        <button type="button" id="intUp">+</button>
-                    </article>
-                    <article>
-                        <h1>Dexterity</h1>
-                        <br>
-                        <button type="button" id="dexDwn">-</button>
-                        <p class="stats" id="dexStat"></p>
-                        <button type="button" id="dexUp">+</button>
-                    </article>
-                </div>
-                <h3>Available Skill Points</h3>
-                <p id="skillLeft"></p>
-                <button type="button" id="skillsBackBtn">Back</button>
-                <button type="button" id="startBattle">To Battle!</button>
             </div>
+            <div>
+                <article>
+                    <h1>Strength</h1>
+                    <br>
+                    <button type="button" id="strDwn">-</button>
+                    <p class="stats" id="strStat"></p>
+                    <button type="button" id="strUp">+</button>
+                </article>
+                <article>
+                    <h1>Intelligence</h1>
+                    <br>
+                    <button type="button" id="intDwn">-</button>
+                    <p class="stats" id="intStat"></p>
+                    <button type="button" id="intUp">+</button>
+                </article>
+                <article>
+                    <h1>Dexterity</h1>
+                    <br>
+                    <button type="button" id="dexDwn">-</button>
+                    <p class="stats" id="dexStat"></p>
+                    <button type="button" id="dexUp">+</button>
+                </article>
+            </div>
+            <h3>Available Skill Points</h3>
+            <p id="skillLeft"></p>
+            <button type="button" id="skillsBackBtn">Back</button>
+            <button type="button" id="startBattle">To Battle!</button>
         </div>
         <div class="battle">
             <button type="button" id="beginBattle">Fight</button>
@@ -94,6 +92,7 @@
             <div id="battleLog">
                 <p>Battle Log</p>
             </div>
+            <button type="button" id="battleBackBtn">Back</button>
         </div>
     </main>
 
