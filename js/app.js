@@ -10,6 +10,7 @@ class Character {
 }
 
 //Consts
+const mainId = document.querySelector(`#main`)
 const introClass = document.querySelectorAll(`.intro`)
 const skillsClass = document.querySelectorAll(`.skills`)
 const battleClass = document.querySelectorAll(`.battle`)
@@ -78,6 +79,7 @@ const intro = ()  =>  {
     } else {
     character.name = nameSelect.value
     }
+    mainId.style.backgroundImage = "url('images/skills-bg.jpeg')"
     introClass.forEach((element) => {
         element.style.display = `none`
     })
