@@ -121,6 +121,11 @@ main {
     justify-content: space-around;
 }
 
+#battleLog {
+    height: 100px;
+    overflow: auto;
+}
+
 .intro {
     display: block;
 }
