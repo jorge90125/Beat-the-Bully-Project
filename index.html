@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Beat the Bully</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/fcfd255ef5.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -24,52 +28,89 @@
         <div class="intro" id="introDiv">
             <h2 class="needsBG" id="premise">Premise</h2>
             <p class="needsBG" id="premPar">The school bully won't stop picking on you and your friends! After speaking out against him, he's challenging you to a fight after school. You only have a limited amount of time to train up! First thing's first, what is your name?</p>
-            <input type="text" class="introSubmit" id="nameInput" placeholder="Your name here"><button type="button" class="introSubmit" id="nameSubmit">Submit</button>
+            <input type="text" id="nameInput" placeholder="Your name here"><button type="button" class="regButton" id="nameSubmit">Submit Name</button>
         </div>
-        <div class="skills">
-            <h2>Directions</h2>
-            <ul>
-                <li>Add points to your 3 skills</li>
-                <li>The sum total of all 3 skills must equal 10 to continue</li>
-                <li>Click the "Start Batlle" button when you are done and the battle will commence</li>
-                <li>Once the battle begins, each turn will consist of one of the 3 skills being randomly chosen</li>
-                <li>The random skill value will be compared to a random skill value of the bully</li>
-                <li>The player with the higher stat will deal one damage</li>
-                <li>Once a player's health reaches 0, they lose</li>
-            </ul>
-            <br>
+        <div class="skills" id="skillsDiv">
+            <h2 class="needsBG">Directions</h2>
+            <div id="skillsIntro">
+                <ul class="needsBG" id="skillsUL">
+                    <li>Add points to your 3 skills</li>
+                    <li>The sum total of all 3 skills must equal 10 to continue</li>
+                    <li>Click the "Start Batlle" button when you are done and the battle will commence</li>
+                    <li>Once the battle begins, each turn will consist of one of the 3 skills being randomly chosen</li>
+                    <li>The random skill value will be compared to a random skill value of the bully</li>
+                    <li>The player with the higher stat will deal one damage</li>
+                    <li>Once a player's health reaches 0, they lose</li>
+                </ul>
+                <div id="characterDiv">
+                    <img src="../beat-the-bully-project/images/kirby-sprite.png" alt="kirby boi" id="characterImg">
+                </div>
+            </div>
             <hr>
-            <br>
-            <div id="characterImg">
-
+            <div id="statsChoiceDiv">
+                <article class="statDivs">
+                    <h1 class="needsBG">Strength</h1>
+                    <div class="stats">
+                        <button type="button" class="buttonIcons" id="strDwn">
+                            <span class="fa-stack fa-2x" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-1x"></i>
+                                <i class="fa-solid fa-circle-minus fa-stack-2x"></i>
+                            </span>
+                        </button>
+                        <p class="needsBG" id="strStat"></p>
+                        <button type="button" class="buttonIcons" id="strUp">
+                            <span class="fa-stack fa-2x" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-1x"></i>
+                                <i class="fa-solid fa-circle-plus fa-stack-2x"></i>
+                            </span>
+                        </button>
+                    </div>
+                </article>
+                <article class="statDivs">
+                    <h1 class="needsBG">Intelligence</h1>
+                    <div class="stats">
+                        <button type="button" class="buttonIcons" id="intDwn">
+                            <span class="fa-stack fa-2x" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-1x"></i>
+                                <i class="fa-solid fa-circle-minus fa-stack-2x"></i>
+                            </span>
+                        </button>
+                        <p class="needsBG" id="intStat"></p>
+                        <button type="button" class="buttonIcons" id="intUp">
+                            <span class="fa-stack fa-2x" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-1x"></i>
+                                <i class="fa-solid fa-circle-plus fa-stack-2x"></i>
+                            </span>
+                        </button>
+                    </div>
+                </article>
+                <article class="statDivs">
+                    <h1 class="needsBG">Dexterity</h1>
+                    <div class="stats">
+                        <button type="button" class="buttonIcons" id="dexDwn">
+                            <span class="fa-stack fa-2x" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-1x"></i>
+                                <i class="fa-solid fa-circle-minus fa-stack-2x"></i>
+                            </span>
+                        </button>
+                        <p class="needsBG" id="dexStat"></p>
+                        <button type="button" class="buttonIcons" id="dexUp">
+                            <span class="fa-stack fa-2x" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-1x"></i>
+                                <i class="fa-solid fa-circle-plus fa-stack-2x"></i>
+                            </span>
+                        </button>
+                    </div>
+                </article>
+                <article class="statDivs">
+                    <h3 class="needsBG">Available Skill Points</h3>
+                    <p class="needsBG" id="skillLeft"></p>
+                </article>
             </div>
-            <div>
-                <article>
-                    <h1>Strength</h1>
-                    <br>
-                    <button type="button" id="strDwn">-</button>
-                    <p class="stats" id="strStat"></p>
-                    <button type="button" id="strUp">+</button>
-                </article>
-                <article>
-                    <h1>Intelligence</h1>
-                    <br>
-                    <button type="button" id="intDwn">-</button>
-                    <p class="stats" id="intStat"></p>
-                    <button type="button" id="intUp">+</button>
-                </article>
-                <article>
-                    <h1>Dexterity</h1>
-                    <br>
-                    <button type="button" id="dexDwn">-</button>
-                    <p class="stats" id="dexStat"></p>
-                    <button type="button" id="dexUp">+</button>
-                </article>
+            <div class="skillsFooterButtons">
+                <button type="button" class="regButton" id="skillsBackBtn">Back</button>
+                <button type="button" class="regButton" id="startBattle">To Battle!</button>
             </div>
-            <h3>Available Skill Points</h3>
-            <p id="skillLeft"></p>
-            <button type="button" id="skillsBackBtn">Back</button>
-            <button type="button" id="startBattle">To Battle!</button>
         </div>
         <div class="battle">
             <button type="button" id="beginBattle">Fight</button>

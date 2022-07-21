@@ -76,6 +76,7 @@ getBullyStat()
 const intro = ()  =>  {
     if(nameSelect.value === ``) {
         alert(`Please choose a name!`)
+        return
     } else {
     character.name = nameSelect.value
     }
@@ -177,6 +178,7 @@ const toBattle = () => {
         playerStats.push(character.str)
         playerStats.push(character.int)
         playerStats.push(character.dex)
+        mainId.style.backgroundImage = "url('images/fight-bg.jpeg')"
         skillsClass.forEach((element) => {
             element.style.display = `none`
         })
