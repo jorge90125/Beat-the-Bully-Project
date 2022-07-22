@@ -92,7 +92,6 @@ main {
   width: 100px;
 }
 
-
   /* Icon Float Away */
 @-webkit-keyframes hvr-icon-float-away {
   0% {
@@ -218,16 +217,22 @@ main {
 
 .characters {
   display: flex;
+  gap: 150px;
+  align-items: flex-end;
+}
+
+#characterImgBattle {
+  height: 100px;
 }
 
 #battleLog {
-  height: 100px;
+  height: 250px;
   width: 700px;
   overflow: auto;
 }
 
 .battleFooterButtons {
-  display: flex;
+  margin-left: 362px;
 }
 
 .intro {

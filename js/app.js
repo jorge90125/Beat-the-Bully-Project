@@ -220,13 +220,13 @@ const fight = () => {
             battleLog.appendChild(newMsg)
         } else if (playerChoice > bullyChoice) {
             bullyHP --
-            bullyHealth.innerHTML = bullyHP
+            bullyHealth.innerHTML = `${bullyHP}/10 HP`
             const newMsg = document.createElement(`p`)
             newMsg.innerText = `Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Player deals damage!`
             battleLog.appendChild(newMsg)
         } else {
             playerHP --
-            playerHealth.innerHTML = playerHP
+            playerHealth.innerHTML = `${playerHP}/10 HP`
             const newMsg = document.createElement(`p`)
             newMsg.innerText = `Oh no! Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Bully deals damage!`
             battleLog.appendChild(newMsg)
