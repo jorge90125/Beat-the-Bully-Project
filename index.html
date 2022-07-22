@@ -45,8 +45,12 @@
                     </ul>
                 </div>
                 <div id="characterDiv">
-                    <img src="../beat-the-bully-project/images/kirby-sprite.png" alt="kirby boi" id="characterImg">
-                </div>
+                    <img src="../beat-the-bully-project/images/kirby-sprite.png" alt="kirby boi" class="fa-bounce" id="characterImg">
+                    <div class="hvr-icon-float-away" id="statChangeAnimation">
+                        <i class="fa-solid fa-plus fa-2xs"></i>
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    </div>
             </div>
             <hr>
             <div id="statsChoiceDiv">
@@ -109,13 +113,8 @@
                     <p class="needsBG" id="skillLeft"></p>
                 </article>
             </div>
-            <div class="skillsFooterButtons">
-                <button type="button" class="regButton hvr-pulse-grow" id="skillsBackBtn">Back</button>
-                <button type="button" class="regButton hvr-pulse-grow" id="startBattle">To Battle!</button>
-            </div>
         </div>
         <div class="battle" id="battleDiv">
-            <button type="button" class="regButton" id="beginBattle">Fight</button>
             <div class="healthBars">
                 <p class="needsBG" id="playerHealth"></p>
                 <p class="needsBG" id="bullyHealth"></p>
@@ -123,21 +122,39 @@
             <div class="characters">
                 <div class="needsBG" id="charBattleStats">
                     <p id="charBattleName" style="text-decoration: underline;"></p>
-                    <p id="char3Stats"></p>
+                    <p id="char3StatsStr"></p>
+                    <p id="char3StatsInt"></p>
+                    <p id="char3StatsDex"></p>
                 </div>
                 <img src="" alt="">
                 <img src="" alt="">
                 <div class="needsBG" id="bullyBattleStats">
                     <p id="bullyBattleName" style="text-decoration: underline;">Bully</p>
-                    <p id="bully3Stats"></p>
+                    <p id="bully3StatsStr"></p>
+                    <p id="bully3StatsInt"></p>
+                    <p id="bully3StatsDex"></p>
                 </div>
             </div>
+            <button type="button" class="regButton" id="beginBattle">Fight</button>
             <div class="needsBG" id="battleLog">
                 <p>Battle Log</p>
             </div>
-            <button type="button" class="regButton" id="battleBackBtn">Back</button>
         </div>
     </main>
+
+    <footer>
+        <div class="skills">
+            <div class="skillsFooterButtons">
+                <button type="button" class="regButton hvr-pulse-grow" id="skillsBackBtn">Back</button>
+                <button type="button" class="regButton hvr-pulse-grow" id="startBattle">To Battle!</button>
+            </div>
+        </div>
+        <div class="battle">
+            <div class="battleFooterButtons">
+                <button type="button" class="regButton" id="battleBackBtn">Back</button>
+            </div>
+        </div>
+    </footer>
 
     <script type="text/javascript" src="js/app.js">
     </script>

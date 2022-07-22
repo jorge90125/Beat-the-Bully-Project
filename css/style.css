@@ -1,178 +1,243 @@
 body {
-    background-image: url("../images/purple-speed-lines-bg.jpeg");
-    background-size: cover;
+  background-image: url("../images/purple-speed-lines-bg.jpeg");
+  background-size: cover;
 }
 
 header {
-    margin: 20px 40% 30px;
-    background-color: black;
-    color: white;
-    font-family: 'Bungee', cursive;;
-    border: 5px solid whitesmoke;
-    border-radius: 10%;
-    text-align: center;
+  margin: 20px auto 30px;
+  background-color: black;
+  color: white;
+  font-family: 'Bungee', cursive;;
+  border: 5px solid whitesmoke;
+  border-radius: 10%;
+  text-align: center;
+  width: fit-content;
+  padding: 10px 10px;
 }
 
 main {
-    margin: auto;
-    height: 700px;
-    width: 90%;
-    background-image: url("../images/intro-bg.jpeg");
-    background-size: cover;
-    border: 5px solid whitesmoke;
-    border-radius: 5%;
-    font-size: 20px;
+  margin: auto;
+  height: 700px;
+  width: 90%;
+  background-image: url("../images/intro-bg.jpeg");
+  background-size: cover;
+  border: 5px solid whitesmoke;
+  border-radius: 5%;
+  font-size: 20px;
 }
 
+/* INTRO SCREEN */
+
 #introDiv {
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .needsBG {
-    font-family: 'Press Start 2P', cursive;
-    line-height: 150%;
-    letter-spacing: .5px;
-    margin: 25px auto 25px;
-    width: fit-content;
-    background-color: rgba(5, 5, 5, 0.7);
-    color: white;
-    border: 2px solid whitesmoke;
-    text-align: center;
-    padding: 10px;
-    font-size: 15px;
+  font-family: 'Press Start 2P', cursive;
+  line-height: 150%;
+  letter-spacing: .5px;
+  margin: 25px auto 25px;
+  width: fit-content;
+  background-color: rgba(5, 5, 5, 0.7);
+  color: white;
+  border: 2px solid whitesmoke;
+  text-align: center;
+  padding: 10px;
+  font-size: 15px;
 }
 
 #premise {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 #premPar {
-    width: 700px;
+  width: 700px;
 }
 
 #nameInput {
-    border: 2px solid black;
-    padding: 5px;
-    font-size: 25px;
+  border: 2px solid black;
+  padding: 5px;
+  font-size: 25px;
 }
 
+/* SKILLS SCREEN */
+
 #skillsIntro {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #directions {
-    justify-content: left;
-    padding: 2px;
-    flex: 3;
+  justify-content: left;
+  padding: 2px;
+  flex: 3;
 }
 
 #skillsUL {
-    text-align: left;
-    padding: 10px 25px;
+  text-align: left;
+  padding: 10px 25px;
 }
 
 #characterDiv {
-    flex: 2;
-    padding: 25px;
+  flex: 2;
+  padding: 25px;
 }
 
 #characterImg {
-    margin-left: 45%;
-    width: 100px;
+  margin-left: 45%;
+  width: 100px;
+}
+
+
+  /* Icon Float Away */
+@-webkit-keyframes hvr-icon-float-away {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-1em);
+    transform: translateY(-1em);
+  }
+}
+@keyframes hvr-icon-float-away {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-1em);
+    transform: translateY(-1em);
+  }
+}
+.hvr-icon-float-away {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-icon-float-away .hvr-icon {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+.hvr-icon-float-away:hover .hvr-icon, .hvr-icon-float-away:focus .hvr-icon, .hvr-icon-float-away:active .hvr-icon {
+  -webkit-animation-name: hvr-icon-float-away;
+  animation-name: hvr-icon-float-away;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
 }
 
 #statsChoiceDiv {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* Pulse Grow */
 @-webkit-keyframes hvr-pulse-grow {
-    to {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
-  @keyframes hvr-pulse-grow {
-    to {
-      -webkit-transform: scale(1.1);
-      transform: scale(1.1);
-    }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
-  .hvr-pulse-grow {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  }
-  .hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
-    -webkit-animation-name: hvr-pulse-grow;
-    animation-name: hvr-pulse-grow;
-    -webkit-animation-duration: 0.3s;
-    animation-duration: 0.3s;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
-  }
+}
+.hvr-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
 
 .regButton {
-    border: 3px solid black;
-    border-radius: 15px;
-    font-size: 30px;
-    padding: 4px;
-    background-color: lightgray;
+  border: 3px solid black;
+  border-radius: 15px;
+  font-size: 30px;
+  padding: 4px;
+  background-color: lightgray;
 }
 
 .regButton:hover {
-    background-color: #10e8dd;
-    color: blueviolet;
+  background-color: #10e8dd;
+  color: blueviolet;
 }
 
 .buttonIcons {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
 
 .fa-circle {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
 .stats {
-    display: flex;
+  display: flex;
 }
 
 #skillLeft {
-    padding: auto;
-    font-size: 25px;
+  padding: auto;
+  font-size: 25px;
 }
 
 .skillsFooterButtons {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* BATTLE SCREEN */
+
+.healthBars {
+  display: flex;
+}
+
+.characters {
+  display: flex;
 }
 
 #battleLog {
-    height: 100px;
-    overflow: auto;
+  height: 100px;
+  width: 700px;
+  overflow: auto;
+}
+
+.battleFooterButtons {
+  display: flex;
 }
 
 .intro {
-    display: block;
+  display: block;
 }
 
 .skills {
-    display: none;
+  display: none;
 }
 
 .battle {
-    display: none;
+  display: none;
 }

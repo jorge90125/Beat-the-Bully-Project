@@ -18,8 +18,6 @@ const battleClass = document.querySelectorAll(`.battle`)
 const nameSelect = document.querySelector(`#nameInput`)
 const submitName = document.querySelector(`#nameSubmit`)
 
-const icons = document.qu
-
 const strStat = document.querySelector(`#strStat`)
 const strDwn = document.querySelector(`#strDwn`)
 const strUp = document.querySelector(`#strUp`)
@@ -41,8 +39,12 @@ const beginBattle = document.querySelector(`#beginBattle`)
 const playerHealth = document.querySelector(`#playerHealth`)
 const bullyHealth = document.querySelector(`#bullyHealth`)
 const charBattleName = document.querySelector(`#charBattleName`)
-const char3Stats = document.querySelector(`#char3Stats`)
-const bully3Stats = document.querySelector(`#bully3Stats`)
+const char3StatsStr = document.querySelector(`#char3StatsStr`)
+const char3StatsInt = document.querySelector(`#char3StatsInt`)
+const char3StatsDex = document.querySelector(`#char3StatsDex`)
+const bully3StatsStr = document.querySelector(`#bully3StatsStr`)
+const bully3StatsInt = document.querySelector(`#bully3StatsInt`)
+const bully3StatsDex = document.querySelector(`#bully3StatsDex`)
 const battleLog = document.querySelector(`#battleLog`)
 const battleBackBtn = document.querySelector(`#battleBackBtn`)
 
@@ -56,9 +58,9 @@ intStat.innerHTML = character.int
 dexStat.innerHTML = character.dex
 skillsLeft.innerHTML = character.skllft
 let playerHP = 10
-playerHealth.innerHTML = playerHP
+playerHealth.innerHTML = `${playerHP}/10 HP`
 let bullyHP = 10
-bullyHealth.innerHTML = bullyHP
+bullyHealth.innerHTML = `${bullyHP}/10 HP`
 
 //set bully skills points
 const bullyStats = []
@@ -167,14 +169,16 @@ const backToIntro = () => {
         element.style.display = `none`
     })
     introClass.forEach((element) => {
-        element.style.display = `block`
+        element.style.display = `flex`
     })
+    mainId.style.backgroundImage = "url('images/intro-bg.jpeg')"
 }
 
 //BATTLE
 //Start battle button on skills screen thats sets character and bully ready for battle
 const toBattle = () => {
     if (character.skllft !== 0) {
+        alert(`Please properly allocate skill points.`)
         return
     } else {
         playerStats.push(character.str)
@@ -188,8 +192,12 @@ const toBattle = () => {
             element.style.display = `block`
         })
         charBattleName.innerHTML = character.name
-        char3Stats.innerHTML = `Str: ${character.str} Int: ${character.int} Dex: ${character.dex}`
-        bully3Stats.innerHTML = `Str: ${bullyStats[0]} Int: ${bullyStats[1]} Dex: ${bullyStats[2]}`
+        char3StatsStr.innerHTML = `Str: ${character.str}`
+        char3StatsInt.innerHTML = `Int: ${character.int}`
+        char3StatsDex.innerHTML = `Dex: ${character.dex}`
+        bully3StatsStr.innerHTML = `Str: ${bullyStats[0]}`
+        bully3StatsInt.innerHTML = `Int: ${bullyStats[1]}`
+        bully3StatsDex.innerHTML = `Dex: ${bullyStats[2]}`
     }
 }
 
@@ -237,7 +245,7 @@ const stopFightInterval = () => {
     clearInterval(setFightInterval)
 }
 const backToSkills = () => {
-    stopFightInterval
+    stopFightInterval()
     battleClass.forEach((element) => {
         element.style.display = `none`
     })
