@@ -18,6 +18,8 @@ const battleClass = document.querySelectorAll(`.battle`)
 const nameSelect = document.querySelector(`#nameInput`)
 const submitName = document.querySelector(`#nameSubmit`)
 
+const icons = document.qu
+
 const strStat = document.querySelector(`#strStat`)
 const strDwn = document.querySelector(`#strDwn`)
 const strUp = document.querySelector(`#strUp`)
