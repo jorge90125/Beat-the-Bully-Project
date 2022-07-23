@@ -188,6 +188,11 @@ main {
   transform: scaleX(-1);
 }
 
+#beginBattleDiv {
+  display: flex;
+  justify-content: center;
+}
+
 #battleLog {
   height: 250px;
   width: 700px;
