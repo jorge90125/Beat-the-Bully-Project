@@ -164,6 +164,7 @@ main {
 .skillsFooterButtons {
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 }
 
 /* BATTLE SCREEN */
@@ -194,12 +195,13 @@ main {
 }
 
 #battleLog {
-  height: 250px;
+  height: 240px;
   width: 700px;
   overflow: auto;
 }
 
 .battleFooterButtons {
+  margin-top: 10px;
   margin-left: 362px;
 }
 
