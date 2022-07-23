@@ -45,6 +45,8 @@ const char3StatsDex = document.querySelector(`#char3StatsDex`)
 const bully3StatsStr = document.querySelector(`#bully3StatsStr`)
 const bully3StatsInt = document.querySelector(`#bully3StatsInt`)
 const bully3StatsDex = document.querySelector(`#bully3StatsDex`)
+const characterImgBattle = document.querySelector(`#characterImgBattle`)
+const bullyImgBattle = document.querySelector(`#bullyImgBattle`)
 const battleLog = document.querySelector(`#battleLog`)
 const battleBackBtn = document.querySelector(`#battleBackBtn`)
 
@@ -221,12 +223,20 @@ const fight = () => {
         } else if (playerChoice > bullyChoice) {
             bullyHP --
             bullyHealth.innerHTML = `${bullyHP}/10 HP`
+            characterImgBattle.src = "../beat-the-bully-project/images/kirby-swing-gif.gif"
+            setTimeout(() => {
+                characterImgBattle.src = "../beat-the-bully-project/images/kirby-sprite.png"
+            }, 1000)
             const newMsg = document.createElement(`p`)
             newMsg.innerText = `Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Player deals damage!`
             battleLog.appendChild(newMsg)
         } else {
             playerHP --
             playerHealth.innerHTML = `${playerHP}/10 HP`
+            bullyImgBattle.src = "../beat-the-bully-project/images/dio-punching-gif.gif"
+            setTimeout(() => {
+                bullyImgBattle.src = "../beat-the-bully-project/images/dio-standing-gif.gif"
+            }, 1500)
             const newMsg = document.createElement(`p`)
             newMsg.innerText = `Oh no! Player attack power is ${playerChoice} and Bully attack power is ${bullyChoice}. Bully deals damage!`
             battleLog.appendChild(newMsg)
@@ -237,7 +247,7 @@ const fight = () => {
 //Autofight Interval
 const setFightInterval = () => {
     beginBattle.style.display = `none`
-    setInterval(fight, 1500)
+    setInterval(fight, 2000)
 }
 
 //battle back button
