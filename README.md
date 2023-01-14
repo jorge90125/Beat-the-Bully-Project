@@ -6,6 +6,12 @@ Project 1 for GA SEI Flex 2022
 * Allocate skill points
 * Battle against the bully
 
+## Utilized Skills
+* Javascript
+* HTML
+* CSS
+* Node.js
+
 ## Wireframes
 https://wireframe.cc/MuPx0K - Intro screen
 
